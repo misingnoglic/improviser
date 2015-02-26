@@ -32,7 +32,7 @@ function get_note(mode) {
 	for (i=0; i<mode.length; i++){
 		sorted_mode.push(mode[i]%12)
 	}
-	a.sort //puts the mode in sorted value (for octave reasons)
+	sorted_mode.sort //puts the mode in sorted value (for octave reasons)
 	
 	
 	last_pitch = last_note%12 //gets the previous pitch we used
