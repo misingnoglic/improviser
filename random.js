@@ -14,6 +14,8 @@ last_mode = 1
 last_note = 76
 displacement = 0
 last_movement = 0
+last_mode = null
+modes = [Gm_triad,F_triad,D_triad,special]
 
 //below is dictionary of MIDI number to note name
 notes = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 7:"G", 9:"A", 10:"Bb", 11:"B"}
@@ -21,12 +23,22 @@ notes = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 7:"G", 9:"A", 10:"B
 min_octave = 4
 max_octave = 7
 
+function change_mode(old_mode,new_mode){
+	last_pitch = last_note%12 //gets the previous pitch we used
+	last_octave = Math.floor(last_note/12) //previous octave we were in
+	new_mode = modes[new_mode]
+	distances = []
+	for (i=0; i<new_mode.length; i++){
+		distances.push(Math.abs( last_pitch - new_mode[i] )
+	}
+}
+
 function get_note(mode) {
 	offset = 0
 	post(mode)
 	post(offset)
 	//offset = 0
-	modes = [Gm_triad,F_triad,D_triad,special]
+	//modes = [Gm_triad,F_triad,D_triad,special]
 	mode = modes[mode]//selects the mode we are in
 	sorted_mode = []
 	for (i=0; i<mode.length; i++){
@@ -43,7 +55,7 @@ function get_note(mode) {
 	note_shift = 0 //how much we will move the pitch
 	octave_shift = 0 //how much we will move the octave
 	movements = [0,1,2,3,4] //possibly movements (positive or negative)
-	movement_probabilities = [1.5,5,2,3.5,2] //probability of hitting each note (weighted, so 5 is 5x more likely than 1)
+	movement_probabilities = [5,5,1,2,1] //probability of hitting each note (weighted, so 5 is 5x more likely than 1)
 	
 	
 	position=0 //current movement we could be at
@@ -93,7 +105,7 @@ function get_note(mode) {
 	
 	last_note = new_note
 	last_movement = note_shift
-	
+	last_mode = mode
 	
 	
 /*	note = mode[random(0,3)]; //chooses a random note from the mode
