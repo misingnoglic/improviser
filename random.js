@@ -1,5 +1,5 @@
 inlets = 1;
-outlets = 3;
+outlets = 4;
 
 Gm_triad = triad(7,false) //notes of Gm chord
 Gm_scale = scale(7,true,true)
@@ -8,9 +8,8 @@ F_scale = scale(5,true)
 D_triad = triad(2,true) // notes of D chord
 special = pentatonic(0,true)
 
-bass = [55,53,50,0] //bass notes (not implemented)
+bass_notes = [55,53,50,0] //bass notes (not implemented)
 
-last_mode = 1
 last_note = 76
 displacement = 0
 last_movement = 0
@@ -23,14 +22,48 @@ notes = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 7:"G", 9:"A", 10:"B
 min_octave = 4
 max_octave = 7
 
-function change_mode(old_mode,new_mode){
+function random_choice(items,weights){
+	random_num = random_float(0,list_sum(weights))
+	position = 0
+	for (i=0; i<items.length; i++){
+		position += weights[i]
+
+		if (random_num < position){ //if the number is that movement
+			return items[i] //make that the note shift
+		}
+	}
+}
+
+function change_mode(new_mode){
+	offset = 0
+	num = new_mode
 	last_pitch = last_note%12 //gets the previous pitch we used
 	last_octave = Math.floor(last_note/12) //previous octave we were in
 	new_mode = modes[new_mode]
 	distances = []
 	for (i=0; i<new_mode.length; i++){
-		distances.push(Math.abs( last_pitch - new_mode[i] )
+		distances.push( last_pitch - new_mode[i] )
 	}
+	distances.sort(function(a,b){ return Math.abs(a) - Math.abs(b) })
+	reversed_temp = distances
+	reversed = []
+	for (i=0; i<reversed_temp.length; i++){
+		reversed.push(Math.abs(reversed_temp[i]))
+	}
+	new_note = random_choice(distances,reversed)
+	
+	new_note = new_note + 12*octave_shift + offset
+	
+	last_note = new_note
+	last_movement = note_shift
+	last_mode = num
+	
+	outlet(1,new_note);
+	outlet(0,notes[new_note%12])
+	outlet(2,toHz(new_note))
+	outlet(3,toHz(bass[num]))
+	post("\n")
+	post(bass_notes[num])
 }
 
 function get_note(mode) {
@@ -39,6 +72,7 @@ function get_note(mode) {
 	post(offset)
 	//offset = 0
 	//modes = [Gm_triad,F_triad,D_triad,special]
+	num = mode
 	mode = modes[mode]//selects the mode we are in
 	sorted_mode = []
 	for (i=0; i<mode.length; i++){
@@ -105,7 +139,7 @@ function get_note(mode) {
 	
 	last_note = new_note
 	last_movement = note_shift
-	last_mode = mode
+	last_mode = num
 	
 	
 /*	note = mode[random(0,3)]; //chooses a random note from the mode
@@ -118,6 +152,9 @@ function get_note(mode) {
 	outlet(1,new_note);
 	outlet(0,notes[new_note%12])
 	outlet(2,toHz(new_note))
+	outlet(3,toHz(bass[num]))
+	post("\n")
+	post(bass_notes[num])
 }
 
 function random(min,maximum){
