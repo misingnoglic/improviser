@@ -19,7 +19,7 @@ modes = [Gm_triad,F_triad,D_triad,special]
 //below is dictionary of MIDI number to note name
 notes = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 7:"G", 9:"A", 10:"Bb", 11:"B"}
 
-min_octave = 4
+min_octave = 5
 max_octave = 7
 
 function random_choice(items,weights){
@@ -61,7 +61,7 @@ function change_mode(new_mode){
 	outlet(1,new_note);
 	outlet(0,notes[new_note%12])
 	outlet(2,toHz(new_note))
-	outlet(3,toHz(bass[num]))
+	outlet(3,toHz(bass_notes[num]))
 	post("\n")
 	post(bass_notes[num])
 }
@@ -152,7 +152,7 @@ function get_note(mode) {
 	outlet(1,new_note);
 	outlet(0,notes[new_note%12])
 	outlet(2,toHz(new_note))
-	outlet(3,toHz(bass[num]))
+	outlet(3,toHz(bass_notes[num]))
 	post("\n")
 	post(bass_notes[num])
 }
