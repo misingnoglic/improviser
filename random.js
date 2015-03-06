@@ -28,6 +28,8 @@ function bass_note(mode){
 
 function random_choice(items,weights){
 	random_num = random_float(0,list_sum(weights))
+	post("random num: ")
+	post(random_num)
 	position = 0
 	for (i=0; i<items.length; i++){
 		position += weights[i]
@@ -83,9 +85,6 @@ function get_note(mode){
 function same_mode(mode) {
 	offset = 0
 	post(mode)
-	post(offset)
-	//offset = 0
-	//modes = [Gm_triad,F_triad,D_triad,special]
 	num = mode
 	mode = modes[mode]//selects the mode we are in
 	sorted_mode = []
@@ -106,19 +105,8 @@ function same_mode(mode) {
 	movement_probabilities = [5,5,1,2,1] //probability of hitting each note (weighted, so 5 is 5x more likely than 1)
 	
 	
-	position=0 //current movement we could be at
-	random_num = random_float(0,list_sum(movement_probabilities)) //random number placed between one of these movements
+	note_shift = random_choice(movements,movement_probabilities)
 	
-	post("random num: ")
-	post(random_num)
-	for (i=0; i<movements.length; i++){
-		position += movement_probabilities[i]
-
-		if (random_num < position){ //if the number is that movement
-			note_shift = movements[i] //make that the note shift
-			break
-		}
-	}
 	d = .3*sign(last_movement) // -.3 or +.3
 	s = Math.random() //random number between 0 and 1
 
