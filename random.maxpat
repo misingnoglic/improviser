@@ -910,7 +910,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "random.js",
-				"bootpath" : "~/Downloads/improviser-master",
+				"bootpath" : "~/Downloads/improviser-master/improviser",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1

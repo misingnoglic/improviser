@@ -39,6 +39,10 @@ function random_choice(items,weights){
 }
 
 function change_mode(new_mode){
+	post("Mode changed from")
+	post(last_mode)
+	post("to")
+	post(new_mode)
 	offset = 0
 	num = new_mode
 	last_pitch = last_note%12 //gets the previous pitch we used
@@ -62,12 +66,7 @@ function change_mode(new_mode){
 	last_movement = note_shift
 	last_mode = num
 	
-	outlet(1,new_note);
-	outlet(0,notes[new_note%12])
-	outlet(2,toHz(new_note))
-	outlet(3,toHz(bass_notes[num]))
-	post("\n")
-	post(bass_notes[num])
+	output_note(new_note)
 }
 
 function get_note(mode){
