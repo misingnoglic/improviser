@@ -43,6 +43,7 @@ function change_mode(new_mode){
 	post(last_mode)
 	post("to")
 	post(new_mode)
+	post("\n")
 	offset = 0
 	num = new_mode
 	last_pitch = last_note%12 //gets the previous pitch we used
@@ -50,7 +51,7 @@ function change_mode(new_mode){
 	new_mode = modes[new_mode]
 	distances = []
 	for (i=0; i<new_mode.length; i++){
-		distances.push( last_pitch - new_mode[i] )
+		distances.push( Math.floor((last_pitch - new_mode[i])%12 ))
 	}
 	distances.sort(function(a,b){ return Math.abs(a) - Math.abs(b) })
 	reversed_temp = distances
@@ -58,6 +59,7 @@ function change_mode(new_mode){
 	for (i=0; i<reversed_temp.length; i++){
 		reversed.push(Math.abs(reversed_temp[i]))
 	}
+	post(distances)
 	new_note = random_choice(distances,reversed)
 	
 	new_note = new_note + 12*octave_shift + offset

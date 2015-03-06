@@ -107,7 +107,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 206.0, 214.0, 50.0, 35.0 ],
+					"patching_rect" : [ 114.0, 213.0, 50.0, 35.0 ],
 					"style" : "",
 					"text" : "get_note 1"
 				}
@@ -176,7 +176,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 323.0, 168.0, 83.0, 22.0 ],
+					"patching_rect" : [ 323.0, 202.0, 83.0, 22.0 ],
 					"style" : "",
 					"text" : "bass_note $1"
 				}
@@ -590,7 +590,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 182.0, 178.0, 74.0, 22.0 ],
+					"patching_rect" : [ 187.0, 176.0, 74.0, 22.0 ],
 					"style" : "",
 					"text" : "get_note $1"
 				}
