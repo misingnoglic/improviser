@@ -22,6 +22,10 @@ notes = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 7:"G", 9:"A", 10:"B
 min_octave = 5
 max_octave = 7
 
+function bass_note(mode){
+	output_note((bass_notes[mode]),0)
+}
+
 function random_choice(items,weights){
 	random_num = random_float(0,list_sum(weights))
 	position = 0
@@ -66,7 +70,16 @@ function change_mode(new_mode){
 	post(bass_notes[num])
 }
 
-function get_note(mode) {
+function get_note(mode){
+	if (mode==null || mode == last_mode){
+		same_mode(mode)
+	}
+	else{
+		change_mode(mode)
+	}
+}
+
+function same_mode(mode) {
 	offset = 0
 	post(mode)
 	post(offset)
@@ -148,13 +161,17 @@ function get_note(mode) {
 	outlet(1,midi_value); // puts in outlet 1 that note from 4-8 octaves above
 	outlet(0,notes[note%12]); //puts the name of that note in outlet 0
 	outlet(2,toHz(midi_value)) */
+	output_note(new_note,num)
 	
+}
+
+function output_note(new_note,num){
 	outlet(1,new_note);
 	outlet(0,notes[new_note%12])
 	outlet(2,toHz(new_note))
-	outlet(3,toHz(bass_notes[num]))
+	//outlet(3,toHz(bass_notes[num]))
 	post("\n")
-	post(bass_notes[num])
+	//post(bass_notes[num])
 }
 
 function random(min,maximum){
