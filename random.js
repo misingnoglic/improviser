@@ -51,23 +51,26 @@ function change_mode(new_mode){
 	last_pitch = last_note%12 //gets the previous pitch we used
 	last_octave = Math.floor(last_note/12) //previous octave we were in
 	new_mode = modes[new_mode]
+	post("NEW MODE: "+new_mode)
 	distances = []
 	for (i=0; i<new_mode.length; i++){
-		distances.push( Math.floor((last_pitch - new_mode[i])%12 ))
-	}
+		distances.push( Math.floor(( new_mode[i] - last_pitch)%12 ))	
+		}
 	distances.sort(function(a,b){ return Math.abs(a) - Math.abs(b) })
 	reversed_temp = distances
 	reversed = []
 	for (i=0; i<reversed_temp.length; i++){
 		reversed.push(Math.abs(reversed_temp[i]))
 	}
+	
 	post(distances)
-	new_note = random_choice(distances,reversed)
+	new_note = last_note + random_choice(distances,reversed)
+    post(new_note+"NEW NOTE")
+//	new_note = new_note + 12*octave_shift + offset
 	
-	new_note = new_note + 12*octave_shift + offset
-	
+	last_movement = new_note - last_note
 	last_note = new_note
-	last_movement = note_shift
+
 	last_mode = num
 	
 	output_note(new_note)
@@ -120,8 +123,6 @@ function same_mode(mode) {
 	//the new note is the old index plus however many the note shifted, wrapped around (and positive)
 	new_note = sorted_mode[Math.abs((index+note_shift)%mode.length)]
 	 
-	post ("new pitch: ")
-	post(new_note)
 	
 	//the octave shift is the old octave shift, plus however much the shift made it go up or down
 	octave_shift = last_octave + Math.floor((index+note_shift)/mode.length)
@@ -150,7 +151,7 @@ function same_mode(mode) {
 	outlet(1,midi_value); // puts in outlet 1 that note from 4-8 octaves above
 	outlet(0,notes[note%12]); //puts the name of that note in outlet 0
 	outlet(2,toHz(midi_value)) */
-	output_note(new_note,num)
+	output_note(new_note,10)
 	
 }
 
@@ -159,7 +160,12 @@ function output_note(new_note,num){
 	outlet(0,notes[new_note%12])
 	outlet(2,toHz(new_note))
 	//outlet(3,toHz(bass_notes[num]))
-	post("\n")
+	if (num==10){
+		
+		post ("new pitch: ")
+		post(new_note)
+		post("\n")
+	}
 	//post(bass_notes[num])
 }
 

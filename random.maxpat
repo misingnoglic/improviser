@@ -176,7 +176,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 323.0, 202.0, 83.0, 22.0 ],
+					"patching_rect" : [ 323.0, 252.0, 83.0, 22.0 ],
 					"style" : "",
 					"text" : "bass_note $1"
 				}
@@ -910,7 +910,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "random.js",
-				"bootpath" : "~/Downloads/improviser-master/improviser",
+				"bootpath" : "~/improviser",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
