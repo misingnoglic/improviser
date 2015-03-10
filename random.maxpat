@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 1,
-			"architecture" : "x86",
+			"revision" : 0,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 356.0, 197.0, 1154.0, 1012.0 ],
+		"rect" : [ 128.0, 79.0, 872.0, 747.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -85,19 +85,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 615.0, 121.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "zl"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-55",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -132,7 +119,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 114.0, 213.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "get_note 2"
+					"text" : "get_note 0"
 				}
 
 			}
@@ -794,7 +781,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "random.js",
-				"bootpath" : "~/improviser",
+				"bootpath" : "~/Github/improviser",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
