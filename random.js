@@ -7,22 +7,28 @@ F_triad = triad(5,true) //notes of F chord
 F_scale = scale(5,true)
 D_triad = triad(2,true) // notes of D chord
 special = pentatonic(0,true)
+Cm_triad = triad(0,false)
 
-bass_notes = [55,53,50,0] //bass notes (not implemented)
+modes = [Gm_triad,F_triad,D_triad,Cm_triad]
+//modes = [Gm_triad,Cm_triad, D_triad, Gm_triad]
+//bass_notes = [55,53,50,0] //bass notes (not implemented)
 
 last_note = 76
 displacement = 0
 last_movement = 0
 last_mode = null
-modes = [Gm_triad,F_triad,D_triad,special]
 
 //below is dictionary of MIDI number to note name
 notes = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 7:"G", 9:"A", 10:"Bb", 11:"B"}
 
 min_octave = 5
-max_octave = 7
+max_octave = 8
 
 function bass_note(mode){
+	bass_notes = []
+	for (i=0; i<modes.length; i++){
+		bass_notes[i] = modes[i][0]+(12*4)
+	}
 	output_note((bass_notes[mode]),0)
 }
 
@@ -65,7 +71,7 @@ function change_mode(new_mode){
 	
 	post(distances)
 	new_note = last_note + random_choice(distances,reversed)
-    post(new_note+"NEW NOTE")
+    post(new_note+" NEW NOTE")
 //	new_note = new_note + 12*octave_shift + offset
 	
 	last_movement = new_note - last_note
@@ -105,7 +111,7 @@ function same_mode(mode) {
 	note_shift = 0 //how much we will move the pitch
 	octave_shift = 0 //how much we will move the octave
 	movements = [0,1,2,3,4] //possibly movements (positive or negative)
-	movement_probabilities = [5,5,1,2,1] //probability of hitting each note (weighted, so 5 is 5x more likely than 1)
+	movement_probabilities = [4,5,1,2,1] //probability of hitting each note (weighted, so 5 is 5x more likely than 1)
 	
 	
 	note_shift = random_choice(movements,movement_probabilities)
@@ -156,6 +162,8 @@ function same_mode(mode) {
 }
 
 function output_note(new_note,num){
+	offset = 0
+	new_note = new_note + offset
 	outlet(1,new_note);
 	outlet(0,notes[new_note%12])
 	outlet(2,toHz(new_note))
