@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 620.0, 280.0, 1154.0, 1012.0 ],
+		"rect" : [ 356.0, 197.0, 1154.0, 1012.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -77,9 +77,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 302.760132, 156.86673, 105.0, 23.0 ],
+					"patching_rect" : [ 302.760132, 156.86673, 149.0, 23.0 ],
 					"style" : "",
-					"text" : "zl lookup 0 1 0 2"
+					"text" : "zl lookup 0 1 0 2 0 1 2 0"
 				}
 
 			}
