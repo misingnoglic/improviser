@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 150.0, 79.0, 872.0, 747.0 ],
+		"rect" : [ 34.0, 79.0, 1372.0, 753.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -119,7 +119,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 114.0, 213.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "get_note 1"
+					"text" : "get_note 0"
 				}
 
 			}
@@ -460,7 +460,6 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.139122, 0.131546, 0.309804, 1.0 ],
 					"id" : "obj-13",
 					"maxclass" : "nslider",
 					"numinlets" : 2,
@@ -468,7 +467,8 @@
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 114.0, 497.0, 75.0, 198.0 ],
-					"style" : ""
+					"presentation_rect" : [ 114.0, 497.0, 75.0, 198.0 ],
+					"style" : "velvet"
 				}
 
 			}
