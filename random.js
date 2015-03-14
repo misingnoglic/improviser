@@ -65,11 +65,14 @@ function change_mode(new_mode){
 	distances.sort(function(a,b){ return Math.abs(a) - Math.abs(b) })
 	reversed_temp = distances
 	reversed = []
-	for (i=0; i<reversed_temp.length; i++){
-		reversed.push(Math.abs(reversed_temp[i]))
+	for (i=reversed_temp.length-1; i>0; i--){
+		reversed.push(Math.abs(reversed_temp[i])*10)
 	}
 	
-	post(distances)
+	post("DIS: "+distances)
+	post("PROB: "+reversed)
+	//new_note = last_note + random_choice([distances[0],random_choice(distances,reversed)],[5,1])
+	//new_note = last_note + distances[0]
 	new_note = last_note + random_choice(distances,reversed)
     post(new_note+" NEW NOTE")
 //	new_note = new_note + 12*octave_shift + offset
