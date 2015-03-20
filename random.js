@@ -8,9 +8,25 @@ F_scale = scale(5,true)
 D_triad = triad(2,true) // notes of D chord
 special = pentatonic(0,true)
 Cm_triad = triad(0,false)
+C_triad = triad (0,true)
+Eb_aug_triad = triad(3,false,false,true)
+Eb_triad = triad(3,true)
+A_aug = triad(9,true, false, true)
+G_triad = triad(7,true)
+Dm_triad = triad(2,false)
+A_triad = triad(9,true)
+
+Bm_triad = triad(11,false)
+A_triad = triad(9,true)
+E_triad = triad(4,true)
+folia = [Dm_triad, A_triad, C_triad, F_triad]
+skyrim = [Bm_triad, A_triad, E_triad]
 
 modes = [Gm_triad,F_triad,D_triad,Cm_triad]
+//modes = skyrim
+//modes = [Cm_triad,Eb_aug_triad,Eb_triad,A_aug,G_triad]
 //modes = [Gm_triad,Cm_triad, D_triad, Gm_triad]
+//modes = [Bm_triad,G_triad,A_triad,E_triad]
 //bass_notes = [55,53,50,0] //bass notes (not implemented)
 
 last_note = 76
@@ -66,7 +82,7 @@ function change_mode(new_mode){
 	reversed_temp = distances
 	reversed = []
 	for (i=reversed_temp.length-1; i>0; i--){
-		reversed.push(Math.abs(reversed_temp[i])*10)
+		reversed.push((Math.abs(reversed_temp[i])*100)+1)
 	}
 	
 	post("DIS: "+distances)
@@ -86,7 +102,8 @@ function change_mode(new_mode){
 }
 
 function get_note(mode){
-	if (mode==null || mode == last_mode){
+	post(modes[mode])
+	if (mode==null || mode == last_mode || !(modes[mode].indexOf(last_note)==-1) ){
 		same_mode(mode)
 	}
 	else{
@@ -193,12 +210,19 @@ function toHz(midi){
 	return Math.pow(2,(midi-69)/12)*440
 }
 
-function triad(midi, major){
+function triad(midi, major, diminished, augmented){
 	add = 0
+	aug = 0
 	if (major){
 		add=1
 	}
-	return [midi,midi+3+add,midi+7]
+	if (augmented){
+		aug=1
+	}
+	if (diminished){
+		aug=-1
+	}
+	return [midi,midi+3+add,midi+7+aug]
 }
 
 
