@@ -1,5 +1,5 @@
 inlets = 1;
-outlets = 4;
+outlets = 6;
 
 Gm_triad = triad(7,false) //notes of Gm chord
 Gm_scale = scale(7,true,true)
@@ -19,14 +19,25 @@ A_triad = triad(9,true)
 Bm_triad = triad(11,false)
 A_triad = triad(9,true)
 E_triad = triad(4,true)
-folia = [Dm_triad, A_triad, C_triad, F_triad]
-skyrim = [Bm_triad, A_triad, E_triad]
 
-modes = [Gm_triad,F_triad,D_triad,Cm_triad]
-//modes = skyrim
+passamezzo = create_mode_object([Gm_triad,F_triad,D_triad,Cm_triad],[0,0,1,1,0,0,2,2,0,0,1,1,0,2,0,0])
+folia = create_mode_object([Dm_triad, A_triad, C_triad, F_triad],[0,0,1,1,0,0,2,2,3,3,2,2,0,0,1,1,0,0,1,1,0,0,2,2,3,3,2,2,1,1,0,0])
+skyrim = create_mode_object([Bm_triad, A_triad, E_triad])
+c_major = create_mode_object([C_triad,F_triad,G_triad])
+weird1 = [Cm_triad,Eb_aug_triad,Eb_triad,A_aug,G_triad]
+weird2 = [Gm_triad,Cm_triad, D_triad]
+weird3 = [Bm_triad,G_triad,A_triad,E_triad]
+mode_options = [passamezzo,folia,c_major]
+
+modes = passamezzo.chords
+bass_notes = passamezzo.bass
+
 //modes = [Cm_triad,Eb_aug_triad,Eb_triad,A_aug,G_triad]
-//modes = [Gm_triad,Cm_triad, D_triad, Gm_triad]
+//modes = [Gm_triad,Cm_triad, D_triad]
 //modes = [Bm_triad,G_triad,A_triad,E_triad]
+
+
+
 //bass_notes = [55,53,50,0] //bass notes (not implemented)
 
 last_note = 76
@@ -37,8 +48,26 @@ last_mode = null
 //below is dictionary of MIDI number to note name
 notes = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 7:"G", 9:"A", 10:"Bb", 11:"B"}
 
-min_octave = 5
-max_octave = 8
+min_octave = 4
+max_octave = 7
+
+function change_total_mode(n){
+	modes = mode_options[n].chords
+	bass_notes = mode_options[n].bass
+	post(bass_notes)
+	outlet(4,bass_notes);
+	post("LENGTH OF BASS ")
+	post(bass_notes.length)
+	post("\n")
+	outlet(5,bass_notes.length);
+}
+
+function create_mode_object(chords,bass){
+	if (bass==undefined){
+		bass=[0,0,1,1,2,2,0,0]
+	}
+	return {chords:chords, bass:bass}
+}
 
 function bass_note(mode){
 	bass_notes = []
