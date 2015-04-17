@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 0,
-			"architecture" : "x64",
+			"revision" : 1,
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 170.0, 79.0, 717.0, 711.0 ],
+		"rect" : [ 480.0, 175.0, 1541.0, 1060.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,27 +38,26 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "button",
+					"id" : "obj-19",
+					"items" : [ "passamezzo", ",", "folia", ",", "c_major", ",", "weird1", ",", "weird2", ",", "weird3" ],
+					"maxclass" : "umenu",
 					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 480.0, 11.0, 24.0, 24.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 564.0, 42.0, 100.0, 22.0 ],
 					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-28",
-					"maxclass" : "number",
-					"maximum" : 2,
-					"minimum" : 0,
+					"id" : "obj-26",
+					"maxclass" : "button",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 528.0, 42.0, 33.0, 22.0 ],
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 480.0, 11.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -199,7 +198,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 114.0, 213.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "get_note 1"
+					"text" : "get_note 2"
 				}
 
 			}
@@ -600,7 +599,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
+					"destination" : [ "obj-19", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-10", 0 ]
@@ -717,6 +716,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -793,15 +801,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-27", 5 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-28", 0 ]
 				}
 
 			}
@@ -929,7 +928,7 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "random.js",
-				"bootpath" : "~/Github/improviser",
+				"bootpath" : "~/improviser",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1

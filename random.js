@@ -24,10 +24,10 @@ passamezzo = create_mode_object([Gm_triad,F_triad,D_triad,Cm_triad],[0,0,1,1,0,0
 folia = create_mode_object([Dm_triad, A_triad, C_triad, F_triad],[0,0,1,1,0,0,2,2,3,3,2,2,0,0,1,1,0,0,1,1,0,0,2,2,3,3,2,2,1,1,0,0])
 skyrim = create_mode_object([Bm_triad, A_triad, E_triad])
 c_major = create_mode_object([C_triad,F_triad,G_triad])
-weird1 = [Cm_triad,Eb_aug_triad,Eb_triad,A_aug,G_triad]
-weird2 = [Gm_triad,Cm_triad, D_triad]
-weird3 = [Bm_triad,G_triad,A_triad,E_triad]
-mode_options = [passamezzo,folia,c_major]
+weird1 = create_mode_object([Cm_triad,Eb_aug_triad,Eb_triad,A_aug,G_triad],[0,0,1,2,3,3,4,4])
+weird2 = create_mode_object([Gm_triad,Cm_triad, D_triad])
+weird3 = create_mode_object([Bm_triad,G_triad,A_triad,E_triad],[0,0,1,1,2,2,3,3])
+mode_options = [passamezzo,folia,c_major,weird1,weird2,weird3]
 
 modes = passamezzo.chords
 bass_notes = passamezzo.bass
@@ -48,8 +48,8 @@ last_mode = null
 //below is dictionary of MIDI number to note name
 notes = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 7:"G", 9:"A", 10:"Bb", 11:"B"}
 
-min_octave = 4
-max_octave = 7
+min_octave = 5
+max_octave = 8
 
 function change_total_mode(n){
 	modes = mode_options[n].chords
