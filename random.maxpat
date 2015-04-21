@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 1,
-			"architecture" : "x86",
+			"revision" : 0,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 480.0, 175.0, 1541.0, 1060.0 ],
+		"rect" : [ 34.0, 79.0, 853.0, 747.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,7 +44,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 608.75, 488.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 609.75, 488.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "*~"
 				}
@@ -71,7 +70,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 662.5, 367.5, 24.0, 24.0 ],
+					"patching_rect" : [ 551.0, 444.5, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 264.0, 609.5, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -82,7 +83,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 367.5, 30.5, 48.5, 20.0 ],
+					"patching_rect" : [ 308.0, 18.0, 48.5, 20.0 ],
 					"style" : "",
 					"text" : "reset"
 				}
@@ -97,6 +98,8 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 605.0, 576.5, 91.0, 143.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 300.0, 462.5, 75.0, 139.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~[1]",
@@ -116,26 +119,19 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-19",
-					"items" : [ "passamezzo", ",", "folia", ",", "c_major", ",", "weird1", ",", "weird2", ",", "weird3", ",", "gerudo" ],
+					"items" : [ "passamezzo", ",", "folia", ",", "c_major", ",", "weird1", ",", "weird2", ",", "weird3", ",", "gerudo", ",", "dragon-roost" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 528.0, 41.0, 100.0, 22.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 480.0, 11.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 397.0, 125.0, 100.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -190,7 +186,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 193.5, 41.0, 24.0, 24.0 ],
+					"patching_rect" : [ 368.5, 23.5, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 416.5, 90.5, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -276,7 +274,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 114.0, 213.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "get_note 0"
+					"text" : "get_note 3"
 				}
 
 			}
@@ -291,6 +289,8 @@
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 257.0, 544.0, 75.0, 198.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 300.0, 262.0, 75.0, 198.0 ],
 					"style" : ""
 				}
 
@@ -361,6 +361,8 @@
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 57.0, 64.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 240.0, 133.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -449,6 +451,8 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 102.0, 23.5, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 234.0, 177.5, 50.0, 22.0 ],
 					"style" : "",
 					"varname" : "number"
 				}
@@ -487,6 +491,8 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 430.0, 583.0, 133.0, 130.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 177.0, 462.5, 99.0, 139.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~",
@@ -588,7 +594,8 @@
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 114.0, 497.0, 75.0, 198.0 ],
-					"presentation_rect" : [ 114.0, 497.0, 75.0, 198.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 189.0, 262.0, 75.0, 198.0 ],
 					"style" : "velvet"
 				}
 
@@ -834,15 +841,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-178", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1005,13 +1003,13 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-24" : [ "live.gain~[1]", "live.gain~[1]", 0 ],
-			"obj-5" : [ "live.gain~", "live.gain~", 0 ]
+			"obj-5" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-24" : [ "live.gain~[1]", "live.gain~[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "random.js",
-				"bootpath" : "~/improviser",
+				"bootpath" : "~/Github/improviser",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1

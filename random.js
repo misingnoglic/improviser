@@ -16,25 +16,31 @@ G_triad = triad(7,true)
 Dm_triad = triad(2,false)
 A_triad = triad(9,true)
 
+Bb_triad = triad(10,true)
+Ab_triad = triad(8,true)
+
+
 Bm_triad = triad(11,false)
 A_triad = triad(9,true)
 E_triad = triad(4,true)
 
 Fsharpm_triad= triad(6,false)
 E_triad = triad(4,true)
-Csharp_F_triad=[5,8,13,16]
+Csharp_F_triad=[5,8,13]
 
 
 passamezzo = create_mode_object([Gm_triad,F_triad,D_triad,Cm_triad],[0,0,1,1,0,0,2,2,0,0,1,1,0,2,0,0])
-folia = create_mode_object([Dm_triad, A_triad, C_triad, F_triad],[0,0,1,1,0,0,2,2,3,3,2,2,0,0,1,1,0,0,1,1,0,0,2,2,3,3,2,2,1,1,0,0])
+folia = create_mode_object([Dm_triad, A_triad, C_triad, F_triad],[0,0,1,1,0,0,2,2,3,3,2,2,0,0,1,1,0,0,1,1,0,0,2,2,3,3,2,2,0,1,0,0],[50,49,52,53])
 skyrim = create_mode_object([Bm_triad, A_triad, E_triad])
 c_major = create_mode_object([C_triad,F_triad,G_triad])
 weird1 = create_mode_object([Cm_triad,Eb_aug_triad,Eb_triad,A_aug,G_triad],[0,0,1,2,3,3,4,4])
 weird2 = create_mode_object([Gm_triad,Cm_triad, D_triad])
 weird3 = create_mode_object([Bm_triad,G_triad,A_triad,E_triad],[0,0,1,1,2,2,3,3])
 gerudo = create_mode_object([Fsharpm_triad,D_triad,E_triad,Csharp_F_triad],[0,0,1,1,2,2,3,3])
-mode_options = [passamezzo,folia,c_major,weird1,weird2,weird3,gerudo]
+dragon_roost = create_mode_object([G_triad,F_triad,Bb_triad,Ab_triad,Eb_triad],[0,1,0,1,0,1,2,2,3,3,0,0,1,1,4,4])
+mode_options = [passamezzo,folia,c_major,weird1,weird2,weird3,gerudo,dragon_roost]
 
+current_mode = passamezzo
 modes = passamezzo.chords
 bass_notes = passamezzo.bass
 
@@ -58,6 +64,7 @@ min_octave = 5
 max_octave = 8
 
 function change_total_mode(n){
+	current_mode = mode_options[n]
 	modes = mode_options[n].chords
 	bass_notes = mode_options[n].bass
 	post(bass_notes)
@@ -68,17 +75,24 @@ function change_total_mode(n){
 	outlet(5,bass_notes.length);
 }
 
-function create_mode_object(chords,bass){
+function create_mode_object(chords,bass,bass_notes){
 	if (bass==undefined){
 		bass=[0,0,1,1,2,2,0,0]
 	}
-	return {chords:chords, bass:bass}
+	a = {chords:chords, bass:bass, bass_notes : bass_notes}
+	return a
 }
 
 function bass_note(mode){
-	bass_notes = []
-	for (i=0; i<modes.length; i++){
-		bass_notes[i] = modes[i][0]+(12*4)
+	bass_notes = current_mode.bass_notes
+	post("\n\npoop\n\n")
+	post(JSON.stringify(current_mode))
+	post("\n\n\n\n")
+	if (bass_notes == undefined){
+		bass_notes = []
+		for (i=0; i<modes.length; i++){
+			bass_notes[i] = modes[i][0]+(12*4)
+		}
 	}
 	output_note((bass_notes[mode]),0)
 }
