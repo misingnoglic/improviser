@@ -35,10 +35,10 @@ skyrim = create_mode_object([Bm_triad, A_triad, E_triad])
 c_major = create_mode_object([C_triad,F_triad,G_triad])
 weird1 = create_mode_object([Cm_triad,Eb_aug_triad,Eb_triad,A_aug,G_triad],[0,0,1,2,3,3,4,4])
 weird2 = create_mode_object([Gm_triad,Cm_triad, D_triad])
-weird3 = create_mode_object([Bm_triad,G_triad,A_triad,E_triad],[0,0,1,1,2,2,3,3])
-gerudo = create_mode_object([Fsharpm_triad,D_triad,E_triad,Csharp_F_triad],[0,0,1,1,2,2,3,3])
+chill = create_mode_object([Bm_triad,G_triad,A_triad,E_triad],[0,0,1,1,2,2,3,3])
+gerudo = create_mode_object([Fsharpm_triad,D_triad,E_triad,Csharp_F_triad],[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3])
 dragon_roost = create_mode_object([G_triad,F_triad,Bb_triad,Ab_triad,Eb_triad],[0,1,0,1,0,1,2,2,3,3,0,0,1,1,4,4])
-mode_options = [passamezzo,folia,c_major,weird1,weird2,weird3,gerudo,dragon_roost]
+mode_options = [passamezzo,folia,c_major,weird1,weird2,chill,gerudo,dragon_roost]
 
 current_mode = passamezzo
 modes = passamezzo.chords
