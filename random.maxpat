@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 853.0, 747.0 ],
+		"rect" : [ 206.0, 79.0, 883.0, 747.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -123,7 +123,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-19",
-					"items" : [ "passamezzo", ",", "folia", ",", "c_major", ",", "weird1", ",", "weird2", ",", "weird3", ",", "gerudo", ",", "dragon-roost" ],
+					"items" : [ "passamezzo", ",", "folia", ",", "skyrim", ",", "c_major", ",", "weird1", ",", "weird2", ",", "chill", ",", "gerudo", ",", "dragon-roost" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -274,7 +274,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 114.0, 213.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "get_note 3"
+					"text" : "get_note 2"
 				}
 
 			}
@@ -1003,8 +1003,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-5" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-24" : [ "live.gain~[1]", "live.gain~[1]", 0 ]
+			"obj-24" : [ "live.gain~[1]", "live.gain~[1]", 0 ],
+			"obj-5" : [ "live.gain~", "live.gain~", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

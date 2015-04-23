@@ -38,7 +38,10 @@ weird2 = create_mode_object([Gm_triad,Cm_triad, D_triad])
 chill = create_mode_object([Bm_triad,G_triad,A_triad,E_triad],[0,0,1,1,2,2,3,3])
 gerudo = create_mode_object([Fsharpm_triad,D_triad,E_triad,Csharp_F_triad],[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3])
 dragon_roost = create_mode_object([G_triad,F_triad,Bb_triad,Ab_triad,Eb_triad],[0,1,0,1,0,1,2,2,3,3,0,0,1,1,4,4])
-mode_options = [passamezzo,folia,c_major,weird1,weird2,chill,gerudo,dragon_roost]
+
+
+
+mode_options = [passamezzo,folia,skyrim,c_major,weird1,weird2,chill,gerudo,dragon_roost]
 
 current_mode = passamezzo
 modes = passamezzo.chords
