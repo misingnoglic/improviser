@@ -88,9 +88,8 @@ function create_mode_object(chords,bass,bass_notes){
 
 function bass_note(mode){
 	bass_notes = current_mode.bass_notes
-	post("\n\npoop\n\n")
 	post(JSON.stringify(current_mode))
-	post("\n\n\n\n")
+	post("\n")
 	if (bass_notes == undefined){
 		bass_notes = []
 		for (i=0; i<modes.length; i++){
