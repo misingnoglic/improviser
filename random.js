@@ -31,13 +31,13 @@ Csharp_F_triad=[5,8,13]
 
 passamezzo = create_mode_object([Gm_triad,F_triad,D_triad,Cm_triad],[0,0,1,1,0,0,2,2,0,0,1,1,0,2,0,0])
 folia = create_mode_object([Dm_triad, A_triad, C_triad, F_triad],[0,0,1,1,0,0,2,2,3,3,2,2,0,0,1,1,0,0,1,1,0,0,2,2,3,3,2,2,0,1,0,0],[50,49,52,53])
-skyrim = create_mode_object([Bm_triad, A_triad, E_triad])
+skyrim = create_mode_object([Bm_triad, A_triad, E_triad],[0,0,1,1,2,2,0,0],[59,57,52,47])
 c_major = create_mode_object([C_triad,F_triad,G_triad])
 weird1 = create_mode_object([Cm_triad,Eb_aug_triad,Eb_triad,A_aug,G_triad],[0,0,1,2,3,3,4,4])
 weird2 = create_mode_object([Gm_triad,Cm_triad, D_triad])
 chill = create_mode_object([Bm_triad,G_triad,A_triad,E_triad],[0,0,1,1,2,2,3,3])
 gerudo = create_mode_object([Fsharpm_triad,D_triad,E_triad,Csharp_F_triad],[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3])
-dragon_roost = create_mode_object([G_triad,F_triad,Bb_triad,Ab_triad,Eb_triad],[0,1,0,1,0,1,2,2,3,3,0,0,1,1,4,4])
+dragon_roost = create_mode_object([Gm_triad,F_triad,Bb_triad,Ab_triad,Eb_triad],[0,1,0,1,0,1,2,2,3,3,0,0,1,1,4,4])
 
 
 
