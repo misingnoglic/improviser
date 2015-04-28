@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 252.0, 185.0, 1209.0, 1018.0 ],
+		"rect" : [ 252.0, 185.0, 1314.0, 1045.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,9 +45,9 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 86.0, 394.5, 50.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 210.0, 238.0, 50.0, 22.0 ],
+					"presentation_rect" : [ 201.5, 238.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "F"
+					"text" : "C"
 				}
 
 			}
@@ -86,7 +86,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 294.5, 95.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "959"
+					"text" : "3081"
 				}
 
 			}
@@ -98,6 +98,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 400.0, 23.5, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 60.0, 269.5, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -174,6 +176,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 308.0, 18.0, 48.5, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 54.25, 238.0, 48.5, 20.0 ],
 					"style" : "",
 					"text" : "reset"
 				}
@@ -261,6 +265,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 707.5, 444.5, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 352.5, 183.5, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "Turn off sound"
 				}
@@ -348,7 +354,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 114.0, 239.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "get_note 3"
+					"text" : "get_note 0"
 				}
 
 			}
@@ -436,7 +442,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 57.0, 64.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 240.0, 133.0, 24.0, 24.0 ],
+					"presentation_rect" : [ 214.5, 207.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -511,6 +517,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 102.0, 1.5, 57.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 138.0, 143.5, 57.0, 20.0 ],
 					"style" : "",
 					"text" : "speed"
 				}
@@ -526,7 +534,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 102.0, 23.5, 50.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 234.0, 177.5, 50.0, 22.0 ],
+					"presentation_rect" : [ 138.0, 169.5, 50.0, 22.0 ],
 					"style" : "",
 					"varname" : "number"
 				}
@@ -551,7 +559,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 513.5, 782.0, 45.0, 45.0 ],
+					"patching_rect" : [ 502.5, 853.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -564,7 +572,7 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 429.0, 624.0, 133.0, 130.0 ],
+					"patching_rect" : [ 427.0, 624.0, 133.0, 130.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 177.0, 462.5, 99.0, 139.0 ],
 					"saved_attribute_attributes" : 					{
@@ -588,12 +596,12 @@
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 487.0, 517.0, 40.0, 22.0 ],
+					"patching_rect" : [ 487.0, 517.0, 54.0, 22.0 ],
 					"style" : "",
-					"text" : "rect~"
+					"text" : "phasor~"
 				}
 
 			}
@@ -876,7 +884,25 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-24", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-8", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-24", 0 ]
@@ -1029,10 +1055,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
+					"destination" : [ "obj-8", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"source" : [ "obj-5", 1 ]
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
