@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 1,
-			"architecture" : "x86",
+			"revision" : 0,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 252.0, 185.0, 1314.0, 1045.0 ],
+		"rect" : [ 88.0, 146.0, 1314.0, 545.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -213,6 +213,9 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-19",
 					"items" : [ "passamezzo", ",", "folia", ",", "skyrim", ",", "c_major", ",", "weird1", ",", "weird2", ",", "chill", ",", "gerudo", ",", "dragon-roost" ],
 					"maxclass" : "umenu",
@@ -423,12 +426,12 @@
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 612.5, 479.0, 33.0, 22.0 ],
+					"patching_rect" : [ 612.5, 479.0, 45.0, 22.0 ],
 					"style" : "",
-					"text" : "sig~"
+					"text" : "cycle~"
 				}
 
 			}
@@ -609,12 +612,12 @@
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 487.0, 468.0, 33.0, 22.0 ],
+					"patching_rect" : [ 487.0, 468.0, 40.0, 22.0 ],
 					"style" : "",
-					"text" : "sig~"
+					"text" : "rect~"
 				}
 
 			}
@@ -1145,13 +1148,13 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-24" : [ "live.gain~[1]", "live.gain~[1]", 0 ],
-			"obj-5" : [ "live.gain~", "live.gain~", 0 ]
+			"obj-5" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-24" : [ "live.gain~[1]", "live.gain~[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "random.js",
-				"bootpath" : "~/improviser",
+				"bootpath" : "~/Documents/improviser",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
