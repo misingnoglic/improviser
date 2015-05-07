@@ -47,7 +47,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 201.5, 238.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "C"
+					"text" : "F#"
 				}
 
 			}
@@ -86,7 +86,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 294.5, 95.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "3081"
+					"text" : "166"
 				}
 
 			}
@@ -357,7 +357,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 114.0, 239.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "get_note 0"
+					"text" : "get_note 2"
 				}
 
 			}
@@ -426,12 +426,12 @@
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 612.5, 479.0, 45.0, 22.0 ],
+					"patching_rect" : [ 612.5, 479.0, 33.0, 22.0 ],
 					"style" : "",
-					"text" : "cycle~"
+					"text" : "sig~"
 				}
 
 			}
@@ -599,12 +599,12 @@
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 487.0, 517.0, 54.0, 22.0 ],
+					"patching_rect" : [ 487.0, 517.0, 40.0, 22.0 ],
 					"style" : "",
-					"text" : "phasor~"
+					"text" : "rect~"
 				}
 
 			}
@@ -612,12 +612,12 @@
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 487.0, 468.0, 40.0, 22.0 ],
+					"patching_rect" : [ 487.0, 468.0, 33.0, 22.0 ],
 					"style" : "",
-					"text" : "rect~"
+					"text" : "sig~"
 				}
 
 			}
